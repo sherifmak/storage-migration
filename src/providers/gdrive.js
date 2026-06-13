@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('node:fs');
-const { Provider, dirOf, baseName } = require('./base');
+const { Provider, dirOf, baseName, normalizeRel } = require('./base');
 const { request } = require('../util/http');
 const { withRetry } = require('../util/retry');
 const { pipeBody } = require('./dropbox');
@@ -172,7 +172,28 @@ class GoogleDriveProvider extends Provider {
       });
       return res.json();
     });
+    this._freshContainers.add(normalizeRel(relDir)); // newly created -> empty
     return created.id;
+  }
+
+  async _listContainer(folderId) {
+    const map = new Map();
+    let pageToken = null;
+    do {
+      const page = await this._get('/files', {
+        q: `'${folderId}' in parents and trashed = false`,
+        fields: 'nextPageToken, files(id,name,size,mimeType,md5Checksum)',
+        pageSize: 1000, pageToken, supportsAllDrives: true, includeItemsFromAllDrives: true,
+      });
+      for (const f of page.files || []) {
+        if (f.mimeType === FOLDER_MIME) continue;
+        // Native docs report no size; skip them (export size is unknowable here).
+        if (f.size == null) continue;
+        map.set(f.name, { size: Number(f.size), id: f.id, hash: f.md5Checksum });
+      }
+      pageToken = page.nextPageToken;
+    } while (pageToken);
+    return map;
   }
 
   async download(item, destFile, opts = {}) {

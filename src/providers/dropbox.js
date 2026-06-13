@@ -157,11 +157,26 @@ class DropboxProvider extends Provider {
     if (normalizeRel(relDir) !== normalizeRel(parent)) await this.ensureContainer(parent);
     try {
       await this._rpc('/2/files/create_folder_v2', { path: full, autorename: false });
+      this._freshContainers.add(normalizeRel(relDir)); // we created it -> known empty
     } catch (err) {
       // A pre-existing folder reports path/conflict/folder — that's fine.
       if (!/conflict/.test(err.body || '')) throw err;
     }
     return full;
+  }
+
+  async _listContainer(containerRef) {
+    const map = new Map();
+    let page = await this._rpc('/2/files/list_folder', { path: toDbxPath(containerRef), recursive: false, limit: 2000 });
+    // eslint-disable-next-line no-constant-condition
+    while (true) {
+      for (const e of page.entries) {
+        if (e['.tag'] === 'file') map.set(e.name, { size: e.size, id: e.id, hash: e.content_hash });
+      }
+      if (!page.has_more) break;
+      page = await this._rpc('/2/files/list_folder/continue', { cursor: page.cursor });
+    }
+    return map;
   }
 
   async download(item, destFile, opts = {}) {

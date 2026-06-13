@@ -2,7 +2,7 @@
 
 const fs = require('node:fs');
 const crypto = require('node:crypto');
-const { Provider, dirOf, baseName } = require('./base');
+const { Provider, dirOf, baseName, normalizeRel } = require('./base');
 const { request } = require('../util/http');
 const { withRetry } = require('../util/retry');
 const { pipeBody } = require('./dropbox');
@@ -119,6 +119,7 @@ class BoxProvider extends Provider {
     const name = baseName(relDir);
     try {
       const created = await this._api('POST', '/folders', { body: { name, parent: { id: parentId } } });
+      this._freshContainers.add(normalizeRel(relDir)); // newly created -> known empty
       return created.id;
     } catch (err) {
       // 409 name conflict -> Box returns the existing folder id in context_info.
@@ -126,6 +127,21 @@ class BoxProvider extends Provider {
       if (existing) return existing;
       throw err;
     }
+  }
+
+  async _listContainer(folderId) {
+    const map = new Map();
+    let marker = null;
+    do {
+      const page = await this._api('GET', `/folders/${folderId}/items`, {
+        params: { fields: 'id,name,type,size,sha1', limit: 1000, usemarker: true, marker },
+      });
+      for (const e of page.entries || []) {
+        if (e.type === 'file') map.set(e.name, { size: Number(e.size), id: e.id, hash: e.sha1 });
+      }
+      marker = page.next_marker || null;
+    } while (marker);
+    return map;
   }
 
   async download(item, destFile, opts = {}) {

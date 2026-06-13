@@ -42,7 +42,22 @@ class FakeProvider extends Provider {
     for (const [p, buf] of this.files) yield { type: 'file', path: p, name: p.split('/').pop(), size: buf.length, srcId: p };
   }
 
-  async _makeContainer(relDir) { this.madeFolders.add(relDir); return relDir; }
+  async _makeContainer(relDir) {
+    this.madeFolders.add(relDir);
+    if (!this.preexisting) this._freshContainers.add(relDir); // mirror real providers
+    return relDir;
+  }
+
+  async _listContainer(ref) {
+    const map = new Map();
+    for (const [key, buf] of this.received) {
+      const slash = key.lastIndexOf('/');
+      const dir = slash === -1 ? '' : key.slice(0, slash);
+      const name = slash === -1 ? key : key.slice(slash + 1);
+      if (dir === ref) map.set(name, { size: buf.length, id: `id-${name}` });
+    }
+    return map;
+  }
 
   async download(item, destFile, opts = {}) {
     const buf = this.files.get(item.srcId);
@@ -150,6 +165,39 @@ test('pause mid-transfer is safe and a fresh engine resumes to completion', asyn
   assert.equal(dst.received.get('p1.txt').toString(), 'aaa');
   assert.equal(dst.received.get('p2.txt').toString(), 'bbb');
   assert.equal(dst.received.get('p3.txt').toString(), 'ccc');
+});
+
+test('skip-existing: destination files with matching size are skipped, not re-sent', async () => {
+  const src = new FakeProvider();
+  src.seed({ 'a.txt': 'hello', 'docs/b.txt': 'world' });
+  const dst = new FakeProvider();
+  dst.preexisting = true; // destination folders already exist (not freshly created)
+  dst.received.set('a.txt', Buffer.from('HELLO')); // same 5-byte size, different content
+
+  const store = Store.create('e4', {});
+  const summary = await new Engine({ store, source: src, dest: dst, logger: silentLogger, concurrency: 2, skipExisting: true }).run();
+  await store.close();
+
+  assert.equal(summary.skipped, 1, 'a.txt is skipped (already present, same size)');
+  assert.equal(summary.done, 1, 'docs/b.txt is transferred');
+  assert.equal(dst.received.get('a.txt').toString(), 'HELLO', 'existing file left untouched');
+  assert.equal(dst.received.get('docs/b.txt').toString(), 'world');
+});
+
+test('skip-existing off (--overwrite) re-transfers everything', async () => {
+  const src = new FakeProvider();
+  src.seed({ 'a.txt': 'hello' });
+  const dst = new FakeProvider();
+  dst.preexisting = true;
+  dst.received.set('a.txt', Buffer.from('HELLO'));
+
+  const store = Store.create('e5', {});
+  const summary = await new Engine({ store, source: src, dest: dst, logger: silentLogger, concurrency: 1, skipExisting: false }).run();
+  await store.close();
+
+  assert.equal(summary.skipped, 0);
+  assert.equal(summary.done, 1);
+  assert.equal(dst.received.get('a.txt').toString(), 'hello', 'overwritten with source content');
 });
 
 test.after(() => fs.rmSync(TMP, { recursive: true, force: true }));

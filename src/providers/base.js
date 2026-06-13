@@ -19,6 +19,8 @@ class Provider {
     this._saveTokens = ctx.saveTokens || (() => {});
     this._refreshing = null;
     this._folderCache = new Map(); // relDir (posix) -> container ref
+    this._existingCache = new Map(); // relDir -> Promise<Map<name,{size,id}>>
+    this._freshContainers = new Set(); // relDirs we created this run (known empty)
   }
 
   static get id() { return 'base'; }
@@ -90,6 +92,31 @@ class Provider {
     throw new Error(`${this.constructor.name}._makeContainer() not implemented`);
   }
 
+  // List the files already present in a destination container, as a
+  // Map<name, {size, id}>. Cached per directory. Containers we created this run
+  // are known-empty, so we skip the API call entirely (zero overhead on a
+  // first run; only re-runs pay for the listing).
+  async existingFiles(relDir, containerRef) {
+    relDir = normalizeRel(relDir);
+    if (this._freshContainers.has(relDir)) return EMPTY_MAP;
+    let entry = this._existingCache.get(relDir);
+    if (!entry) {
+      entry = this._listContainer(containerRef).catch((err) => {
+        // A listing failure must never corrupt the migration — just don't skip.
+        this.logger.debug('existingFiles list failed', { relDir, err: String(err && err.message || err) });
+        this._existingCache.delete(relDir);
+        return EMPTY_MAP;
+      });
+      this._existingCache.set(relDir, entry);
+    }
+    return entry;
+  }
+
+  // Provider returns Map<name, {size, id}> for files in a container.
+  async _listContainer(/* containerRef */) {
+    return EMPTY_MAP;
+  }
+
   /**
    * Download a source item to a local file, resumably.
    * @param item        manifest item
@@ -116,6 +143,8 @@ class Provider {
     throw new Error(`${this.constructor.name}.getAccountInfo() not implemented`);
   }
 }
+
+const EMPTY_MAP = new Map();
 
 // Normalise a relative path to POSIX form with no leading/trailing slash.
 function normalizeRel(p) {

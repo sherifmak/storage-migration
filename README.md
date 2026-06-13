@@ -87,7 +87,7 @@ cloudferry resume
 | `cloudferry guide [provider]` | Print just the API‑app setup instructions |
 | `cloudferry accounts` | List connected accounts |
 | `cloudferry accounts remove <key>` | Disconnect an account |
-| `cloudferry migrate` | Create and run a migration (interactive, or fully via flags) |
+| `cloudferry migrate` | Create and run a migration (skips already-present files by default) |
 | `cloudferry resume [jobId]` | Resume a paused/interrupted migration (newest job if omitted) |
 | `cloudferry jobs` | List all migration jobs |
 | `cloudferry status [jobId]` | Detailed counts and failures for a job |
@@ -104,7 +104,19 @@ cloudferry migrate \
   --yes
 ```
 
-Use `cloudferry accounts` to see the `key` for each connected account.
+Add `--overwrite` to re-transfer files even if they already exist at the
+destination. Use `cloudferry accounts` to see the `key` for each connected
+account.
+
+### Incremental re-runs (skip existing)
+
+By default CloudFerry **skips files that already exist at the destination** with
+a matching size — so re-running a migration (or running it again later to pick
+up new files) won't re-upload everything, and a lost job database won't cause
+duplicates. The check costs one folder listing per destination directory, and
+folders CloudFerry creates during the run are known-empty so they're never
+listed (a first run pays essentially nothing). Pass `--overwrite` to force a
+full re-transfer instead.
 
 - **Source / destination roots:**
   - Dropbox: a path like `/Photos` (blank = your whole Dropbox).

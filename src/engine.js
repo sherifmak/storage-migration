@@ -12,13 +12,16 @@ const { AbortError } = require('./util/retry');
 // resumable: progress is journalled, and a pause leaves the job ready to
 // continue exactly where it stopped.
 class Engine extends EventEmitter {
-  constructor({ store, source, dest, logger, concurrency = 4 }) {
+  constructor({ store, source, dest, logger, concurrency = 4, skipExisting = true }) {
     super();
     this.store = store;
     this.source = source;
     this.dest = dest;
     this.logger = logger;
     this.concurrency = Math.max(1, concurrency);
+    // Skip files already present at the destination with a matching size (great
+    // for re-runs / incremental syncs). Disabled with --overwrite.
+    this.skipExisting = skipExisting;
 
     this.controller = new AbortController();
     this.signal = this.controller.signal;
@@ -147,6 +150,25 @@ class Engine extends EventEmitter {
     const transfer = item.transfer || {};
     this.store.update(item.seq, { status: STATUS.ACTIVE, transfer });
 
+    const relDir = dirOf(item.path);
+    const containerRef = await this.dest.ensureContainer(relDir);
+
+    // --- skip if it already exists at the destination ---
+    // Only when we have a comparable size (skips Google-native exports, whose
+    // size is unknown until downloaded) and aren't mid-transfer already.
+    if (this.skipExisting && item.size != null && transfer.upload == null && transfer.download == null) {
+      const existing = await this.dest.existingFiles(relDir, containerRef);
+      const hit = existing.get(item.name);
+      if (hit && hit.size === item.size) {
+        this.store.update(item.seq, { status: STATUS.SKIPPED, dstId: hit.id, transfer: null });
+        try { fs.unlinkSync(stagedPath); } catch { /* none */ }
+        w.idle = true;
+        this._pushRecent({ kind: 'skip', name: item.name });
+        this.emit('progress');
+        return;
+      }
+    }
+
     // Throttle resume-state persistence: keep the latest in memory, flush to
     // the journal at most a few times per second (and always on phase change).
     let lastFlush = 0;
@@ -188,7 +210,6 @@ class Engine extends EventEmitter {
     // --- upload from staging ---
     w.phase = 'upload'; w.total = stagedSize; w.transferred = 0;
     item.transferred = 0;
-    const containerRef = await this.dest.ensureContainer(dirOf(item.path));
     const result = await this.dest.upload(
       { localPath: stagedPath, name: item.name, size: stagedSize, containerRef, item },
       {

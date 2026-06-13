@@ -1,5 +1,30 @@
 # CloudFerry — Data Transfer Performance Analysis
 
+> ## Verification outcome (what was actually implemented)
+>
+> Before implementing, the top three recommendations were empirically tested.
+> Two did **not** hold up and were deliberately **not** implemented; one did and
+> was shipped.
+>
+> | Recommendation | Verdict | Why |
+> | --- | --- | --- |
+> | **HTTP keep-alive pooling** | ❌ Not implemented | Measured: global `fetch` **already** reuses connections during active transfer (2 TCP connections for 200 sequential requests). The premise of "repeated TLS handshakes" is false for the steady-state path. The only real gain is during >4s idle gaps (rate-limit backoff), where undici's ~4s keep-alive timeout drops the socket. Capturing that requires either adding the `undici` dependency (breaks the zero-dependency design) or rewriting every provider off `fetch` onto `node:https` (high risk, loses Web-Streams/`FormData`/`duplex` ergonomics). Modest, situational benefit not worth the cost. |
+> | **Cross-file pipelining** (overlap download of file N+1 with upload of file N) | ❌ Not implemented | Simulated across concurrency and link profiles. With varied file sizes the worker pool already overlaps both link directions: benefit is **+90% at N=1** but only **+14% at N=4** and **~0% at N≥12**. In the common **upload-bound** case (slow consumer uplink) it's **+0.5% at N=4 and ~0% at N≥6** — the upload link is the bottleneck and overlapping the fast download saves nothing. Adds double-staging, more disk, and resume complexity for a benefit that vanishes at real concurrency. |
+> | **Skip files already at the destination** | ✅ Implemented | Confirmed `STATUS.SKIPPED` was defined but never assigned — the optimization was entirely missing. Now on by default (name+size match), with `--overwrite` to disable. One folder listing per destination directory, cached; folders created during the run are known-empty and never listed, so a first run pays ~nothing while re-runs/incremental syncs skip already-transferred files and avoid duplicates. |
+>
+> Benchmarks used: a localhost connection-counting server for keep-alive, and a
+> discrete-time full-duplex link simulation (symmetric + 4:1 and 10:1
+> upload-bound) for pipelining.
+>
+> Also note: a blanket **concurrency bump** (4 → 8–16) was reconsidered against
+> the same simulation — in the upload-bound case N=4 is already near-saturating,
+> so a higher default mainly raises rate-limit and memory pressure for little
+> throughput. Left at 4 (user-tunable via `--concurrency`). The remaining items
+> below (single-pass Box hashing, stall timeouts, streamed small uploads) remain
+> valid lower-risk follow-ups.
+>
+> ---
+
 Investigation of the transfer pipeline for throughput/wall-clock optimization.
 Scope: `src/engine.js`, `src/store.js`, `src/providers/*`, `src/util/http.js`,
 `src/util/retry.js`. No runtime behaviour was changed by this document; it is
