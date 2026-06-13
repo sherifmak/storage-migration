@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="689" height="274" viewBox="0 0 689 274" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="689" height="274" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="689" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="689" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="689" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="344.5" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry resume — complete</text>
+<rect x="0.5" y="0.5" width="688" height="273" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">$</text>
+<text x="34" y="46" fill="#e6edf3" font-size="15" font-weight="bold" textLength="153" lengthAdjust="spacingAndGlyphs" xml:space="preserve">cloudferry resume</text>
+<text x="16" y="67" fill="#8b949e" font-size="15" textLength="531" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Resuming most recent job: dropbox-to-gdrive-20260613-162600</text>
+<text x="16" y="88" fill="#8b949e" font-size="15" textLength="306" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  … dashboard runs to completion …</text>
+<text x="16" y="130" fill="#3fb950" font-size="15" font-weight="bold" textLength="198" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✓  Migration complete!</text>
+<text x="16" y="151" fill="#8b949e" font-size="15" textLength="450" lengthAdjust="spacingAndGlyphs" xml:space="preserve">──────────────────────────────────────────────────</text>
+<text x="16" y="172" fill="#e6edf3" font-size="15" textLength="414" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Job        dropbox-to-gdrive-20260613-162600</text>
+<text x="16" y="193" fill="#e6edf3" font-size="15" textLength="126" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Transferred </text>
+<text x="142" y="193" fill="#3fb950" font-size="15" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">23,910</text>
+<text x="196" y="193" fill="#e6edf3" font-size="15" textLength="162" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> files  (271.0 GB)</text>
+<text x="16" y="214" fill="#e6edf3" font-size="15" textLength="180" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Remaining  0 files</text>
+<text x="16" y="235" fill="#8b949e" font-size="15" textLength="657" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Log: ~/.cloudferry/jobs/dropbox-to-gdrive-20260613-162600/migration.log</text>
+</svg>

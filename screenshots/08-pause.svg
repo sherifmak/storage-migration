@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="716" height="295" viewBox="0 0 716 295" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="716" height="295" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="716" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="716" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="716" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="358" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry migrate — paused</text>
+<rect x="0.5" y="0.5" width="715" height="294" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#e6edf3" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">^C</text>
+<text x="16" y="67" fill="#d29922" font-size="15" textLength="513" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Pausing — finishing in-flight chunks and saving progress…</text>
+<text x="16" y="109" fill="#d29922" font-size="15" font-weight="bold" textLength="180" lengthAdjust="spacingAndGlyphs" xml:space="preserve">⏸  Migration paused.</text>
+<text x="16" y="130" fill="#8b949e" font-size="15" textLength="450" lengthAdjust="spacingAndGlyphs" xml:space="preserve">──────────────────────────────────────────────────</text>
+<text x="16" y="151" fill="#e6edf3" font-size="15" textLength="414" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Job        dropbox-to-gdrive-20260613-162600</text>
+<text x="16" y="172" fill="#e6edf3" font-size="15" textLength="126" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Transferred </text>
+<text x="142" y="172" fill="#3fb950" font-size="15" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">12,540</text>
+<text x="196" y="172" fill="#e6edf3" font-size="15" textLength="162" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> files  (143.9 GB)</text>
+<text x="16" y="193" fill="#e6edf3" font-size="15" textLength="225" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Remaining  11,370 files</text>
+<text x="16" y="214" fill="#8b949e" font-size="15" textLength="657" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Log: ~/.cloudferry/jobs/dropbox-to-gdrive-20260613-162600/migration.log</text>
+<text x="16" y="256" fill="#e6edf3" font-size="15" textLength="225" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Resume any time with:  </text>
+<text x="241" y="256" fill="#56d4dd" font-size="15" textLength="459" lengthAdjust="spacingAndGlyphs" xml:space="preserve">cloudferry resume dropbox-to-gdrive-20260613-162600</text>
+</svg>

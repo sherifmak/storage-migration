@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="446" height="211" viewBox="0 0 446 211" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="446" height="211" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="446" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="446" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="446" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="223" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry connect</text>
+<rect x="0.5" y="0.5" width="445" height="210" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">$</text>
+<text x="34" y="46" fill="#e6edf3" font-size="15" font-weight="bold" textLength="162" lengthAdjust="spacingAndGlyphs" xml:space="preserve">cloudferry connect</text>
+<text x="16" y="88" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="88" fill="#e6edf3" font-size="15" textLength="405" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Which cloud provider do you want to connect?</text>
+<text x="34" y="109" fill="#e6edf3" font-size="15" font-weight="bold" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">1</text>
+<text x="43" y="109" fill="#e6edf3" font-size="15" textLength="81" lengthAdjust="spacingAndGlyphs" xml:space="preserve">) Dropbox</text>
+<text x="34" y="130" fill="#e6edf3" font-size="15" font-weight="bold" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">2</text>
+<text x="43" y="130" fill="#e6edf3" font-size="15" textLength="126" lengthAdjust="spacingAndGlyphs" xml:space="preserve">) Google Drive</text>
+<text x="34" y="151" fill="#e6edf3" font-size="15" font-weight="bold" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">3</text>
+<text x="43" y="151" fill="#e6edf3" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">) Box</text>
+<text x="16" y="172" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="172" fill="#e6edf3" font-size="15" textLength="144" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Enter a number </text>
+<text x="169" y="172" fill="#e6edf3" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">1</text>
+</svg>

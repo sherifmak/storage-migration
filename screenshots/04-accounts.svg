@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="545" height="232" viewBox="0 0 545 232" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="545" height="232" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="545" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="545" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="545" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="272.5" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry accounts</text>
+<rect x="0.5" y="0.5" width="544" height="231" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">$</text>
+<text x="34" y="46" fill="#e6edf3" font-size="15" font-weight="bold" textLength="171" lengthAdjust="spacingAndGlyphs" xml:space="preserve">cloudferry accounts</text>
+<text x="16" y="88" fill="#e6edf3" font-size="15" font-weight="bold" textLength="171" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Connected accounts:</text>
+<text x="34" y="109" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">●</text>
+<text x="52" y="109" fill="#e6edf3" font-size="15" font-weight="bold" textLength="144" lengthAdjust="spacingAndGlyphs" xml:space="preserve">jane@example.com</text>
+<text x="214" y="109" fill="#8b949e" font-size="15" textLength="81" lengthAdjust="spacingAndGlyphs" xml:space="preserve">[dropbox]</text>
+<text x="313" y="109" fill="#8b949e" font-size="15" textLength="189" lengthAdjust="spacingAndGlyphs" xml:space="preserve">key=dropbox:dbid:AAH…</text>
+<text x="34" y="130" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">●</text>
+<text x="52" y="130" fill="#e6edf3" font-size="15" font-weight="bold" textLength="126" lengthAdjust="spacingAndGlyphs" xml:space="preserve">jane@gmail.com</text>
+<text x="205" y="130" fill="#8b949e" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">[gdrive]</text>
+<text x="304" y="130" fill="#8b949e" font-size="15" textLength="225" lengthAdjust="spacingAndGlyphs" xml:space="preserve">key=gdrive:jane@gmail.com</text>
+<text x="34" y="151" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">●</text>
+<text x="52" y="151" fill="#e6edf3" font-size="15" font-weight="bold" textLength="90" lengthAdjust="spacingAndGlyphs" xml:space="preserve">jane (Box)</text>
+<text x="205" y="151" fill="#8b949e" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">[box]</text>
+<text x="304" y="151" fill="#8b949e" font-size="15" textLength="117" lengthAdjust="spacingAndGlyphs" xml:space="preserve">key=box:1098…</text>
+<text x="16" y="193" fill="#8b949e" font-size="15" textLength="450" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Remove one with:  cloudferry accounts remove &lt;key&gt;</text>
+</svg>

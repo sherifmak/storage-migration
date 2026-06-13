@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="734" height="253" viewBox="0 0 734 253" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="734" height="253" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="734" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="734" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="734" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="367" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry connect dropbox</text>
+<rect x="0.5" y="0.5" width="733" height="252" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#e6edf3" font-size="15" textLength="378" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Opening your browser to authorize Dropbox…</text>
+<text x="16" y="67" fill="#8b949e" font-size="15" textLength="468" lengthAdjust="spacingAndGlyphs" xml:space="preserve">If the browser did not open, paste this URL into it:</text>
+<text x="34" y="88" fill="#58a6ff" font-size="15" textLength="522" lengthAdjust="spacingAndGlyphs" xml:space="preserve">https://www.dropbox.com/oauth2/authorize?client_id=a1b2c3…</text>
+<text x="16" y="130" fill="#8b949e" font-size="15" textLength="477" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Waiting for authorization on http://localhost:53682 …</text>
+<text x="16" y="172" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✓</text>
+<text x="25" y="172" fill="#e6edf3" font-size="15" textLength="180" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Connected Dropbox: </text>
+<text x="205" y="172" fill="#e6edf3" font-size="15" font-weight="bold" textLength="144" lengthAdjust="spacingAndGlyphs" xml:space="preserve">jane@example.com</text>
+<text x="367" y="172" fill="#8b949e" font-size="15" textLength="270" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(saved as "dropbox:dbid:AAH…")</text>
+<text x="16" y="214" fill="#8b949e" font-size="15" textLength="702" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Connect another with `cloudferry connect`, or start with `cloudferry migrate`.</text>
+</svg>
