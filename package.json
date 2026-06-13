@@ -1,0 +1,32 @@
+{
+  "name": "cloudferry",
+  "version": "1.0.0",
+  "description": "Resumable, terminal-based migration of large cloud storage between Dropbox, Google Drive and Box.",
+  "type": "commonjs",
+  "bin": {
+    "cloudferry": "bin/cloudferry.js",
+    "cf": "bin/cloudferry.js"
+  },
+  "scripts": {
+    "start": "node bin/cloudferry.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "cloud",
+    "migration",
+    "dropbox",
+    "google-drive",
+    "box",
+    "cli",
+    "resumable"
+  ],
+  "license": "MIT"
+}
