@@ -11,23 +11,15 @@ There are two ways to wire it up. Most people want **option A (MCP)**.
 
 ## A. MCP server (recommended)
 
-### 1. Install CloudFerry so the `cloudferry` command exists
+### One command — no clone, no install
 
-```bash
-git clone <repo> cloudferry && cd cloudferry
-npm install        # zero dependencies
-npm link           # puts `cloudferry` on your PATH
-```
-
-(If you'd rather not `npm link`, use `node /absolute/path/to/cloudferry/bin/cloudferry.js`
-everywhere `cloudferry` appears below.)
-
-### 2. Register the MCP server with your agent
+CloudFerry has zero dependencies and runs straight from GitHub via `npx`, so a
+single command registers it with your agent.
 
 **Claude Code**
 
 ```bash
-claude mcp add cloudferry -- cloudferry mcp
+claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp
 ```
 
 **Cursor / Windsurf / Zed / Claude Desktop** — add to the app's MCP config
@@ -37,12 +29,24 @@ claude mcp add cloudferry -- cloudferry mcp
 {
   "mcpServers": {
     "cloudferry": {
-      "command": "cloudferry",
-      "args": ["mcp"]
+      "command": "npx",
+      "args": ["-y", "github:sherifmak/storage-migration", "mcp"]
     }
   }
 }
 ```
+
+<details>
+<summary>Alternative: install locally (offline / development)</summary>
+
+```bash
+git clone https://github.com/sherifmak/storage-migration cloudferry && cd cloudferry
+npm install        # zero dependencies
+npm link           # puts `cloudferry` on your PATH
+claude mcp add cloudferry -- cloudferry mcp
+```
+
+</details>
 
 That's it. The agent now has these tools:
 
@@ -58,7 +62,7 @@ That's it. The agent now has these tools:
 | `pause_migration` | Safely pause a running migration |
 | `resume_migration` | Resume a paused/interrupted migration (optionally retry failures) |
 
-### 3. The typical flow your agent will follow
+### The typical flow your agent will follow
 
 1. **`list_accounts`** — is the source/destination already connected?
 2. If not: **`get_setup_guide`** for the provider, relay the steps so the user

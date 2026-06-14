@@ -28,6 +28,32 @@ Wi‑Fi — then pick up exactly where you left off.
   Press Ctrl-C to pause safely — progress is saved, resume anytime.
 ```
 
+## ⚡ Get started in one command (with your coding agent)
+
+Let an AI coding agent run the whole migration for you. Register CloudFerry's
+MCP server with a single command — no clone, no install (it runs straight from
+GitHub via `npx`):
+
+**Claude Code**
+
+```bash
+claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp
+```
+
+**Cursor / Windsurf / Claude Desktop / Zed** — add this to your MCP config:
+
+```json
+{ "mcpServers": { "cloudferry": { "command": "npx", "args": ["-y", "github:sherifmak/storage-migration", "mcp"] } } }
+```
+
+Then just ask your agent, e.g. *"Use CloudFerry to migrate my Dropbox /Photos
+folder to Google Drive, connect the accounts if needed, and tell me when it's
+done."* The agent walks you through getting API keys, starts the migration in
+the background, and reports progress until it finishes. Full guide:
+**[docs/AGENTS.md](docs/AGENTS.md)**.
+
+> Prefer the plain terminal? Jump to [Install](#install) and [Quick start](#quick-start).
+
 ## Why CloudFerry
 
 - **Resumable by design.** Every file's progress is journalled to disk. After a
@@ -101,16 +127,16 @@ Cursor, Windsurf, …) can run the whole migration for you. Connect your account
 once, then just ask: *"migrate my Dropbox /Photos to Google Drive and tell me
 when it's done."*
 
-Register it once:
+Register it once (no clone or install needed — runs from GitHub via `npx`):
 
 ```bash
 # Claude Code
-claude mcp add cloudferry -- cloudferry mcp
+claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp
 ```
 
 ```json
 // Cursor / Windsurf / Claude Desktop  (mcpServers config)
-{ "mcpServers": { "cloudferry": { "command": "cloudferry", "args": ["mcp"] } } }
+{ "mcpServers": { "cloudferry": { "command": "npx", "args": ["-y", "github:sherifmak/storage-migration", "mcp"] } } }
 ```
 
 The agent gets tools to connect accounts, start a migration in the background,
