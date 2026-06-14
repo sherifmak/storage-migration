@@ -28,23 +28,38 @@ Wi‑Fi — then pick up exactly where you left off.
   Press Ctrl-C to pause safely — progress is saved, resume anytime.
 ```
 
-## ⚡ Get started in one command (with your coding agent)
+## ⚡ Get started with your coding agent
 
-Let an AI coding agent run the whole migration for you. Register CloudFerry's
-MCP server with a single command — no clone, no install (it runs straight from
-GitHub via `npx`):
+CloudFerry is a standard **MCP server**, so *any* MCP-capable coding agent can
+run the whole migration for you. It needs no clone or install — it runs straight
+from GitHub via `npx`. The only thing any agent needs is:
 
-**Claude Code**
+- **command:** `npx`
+- **args:** `-y github:sherifmak/storage-migration mcp`
 
-```bash
-claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp
-```
-
-**Cursor / Windsurf / Claude Desktop / Zed** — add this to your MCP config:
+Most agents (Cursor, Windsurf, Claude Desktop/Code, Cline, Gemini CLI, …) use
+this JSON in their MCP config:
 
 ```json
 { "mcpServers": { "cloudferry": { "command": "npx", "args": ["-y", "github:sherifmak/storage-migration", "mcp"] } } }
 ```
+
+VS Code uses a slightly different shape (top‑level `servers` + `type`):
+
+```json
+{ "servers": { "cloudferry": { "type": "stdio", "command": "npx", "args": ["-y", "github:sherifmak/storage-migration", "mcp"] } } }
+```
+
+Where that config lives (check your agent's MCP docs if it differs):
+
+| Agent | Where to add it |
+| --- | --- |
+| Claude Code | `claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp` |
+| Claude Desktop | `claude_desktop_config.json` |
+| Cursor | `.cursor/mcp.json` (or Settings → MCP) |
+| VS Code | `.vscode/mcp.json` (use the `servers` shape above) |
+| Windsurf | `~/.codeium/windsurf/mcp_config.json` |
+| Any MCP client | command `npx`, args `-y github:sherifmak/storage-migration mcp` |
 
 Then just ask your agent, e.g. *"Use CloudFerry to migrate my Dropbox /Photos
 folder to Google Drive, connect the accounts if needed, and tell me when it's
@@ -122,27 +137,13 @@ cloudferry resume
 
 ## Let your coding agent do it
 
-CloudFerry includes an **MCP server**, so an AI coding agent (Claude Code,
-Cursor, Windsurf, …) can run the whole migration for you. Connect your accounts
-once, then just ask: *"migrate my Dropbox /Photos to Google Drive and tell me
-when it's done."*
-
-Register it once (no clone or install needed — runs from GitHub via `npx`):
-
-```bash
-# Claude Code
-claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp
-```
-
-```json
-// Cursor / Windsurf / Claude Desktop  (mcpServers config)
-{ "mcpServers": { "cloudferry": { "command": "npx", "args": ["-y", "github:sherifmak/storage-migration", "mcp"] } } }
-```
-
-The agent gets tools to connect accounts, start a migration in the background,
-poll its progress, and pause/resume it. Migrations run detached, so they survive
-the agent session ending. Full guide (including a plain‑CLI/JSON path with
-`--detach` and `--json`): **[docs/AGENTS.md](docs/AGENTS.md)**.
+CloudFerry includes a standard **MCP server**, so any MCP-capable coding agent
+can run the whole migration for you — connect accounts, start a migration in the
+background, poll progress, pause/resume. Migrations run detached, so they survive
+the agent session ending. Setup is provider-neutral (see
+[Get started with your coding agent](#-get-started-with-your-coding-agent)
+above); the full guide, including a plain‑CLI/JSON path with `--detach` and
+`--json`, is in **[docs/AGENTS.md](docs/AGENTS.md)**.
 
 ### Non‑interactive migration
 
