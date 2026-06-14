@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="698" height="442" viewBox="0 0 698 442" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="698" height="442" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="698" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="698" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="698" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="349" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry connect dropbox</text>
+<rect x="0.5" y="0.5" width="697" height="441" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">$</text>
+<text x="34" y="46" fill="#e6edf3" font-size="15" font-weight="bold" textLength="234" lengthAdjust="spacingAndGlyphs" xml:space="preserve">cloudferry connect dropbox</text>
+<text x="16" y="88" fill="#e6edf3" font-size="15" font-weight="bold" textLength="225" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Connect a Dropbox account</text>
+<text x="16" y="109" fill="#8b949e" font-size="15" textLength="450" lengthAdjust="spacingAndGlyphs" xml:space="preserve">──────────────────────────────────────────────────</text>
+<text x="16" y="151" fill="#e6edf3" font-size="15" font-weight="bold" textLength="504" lengthAdjust="spacingAndGlyphs" xml:space="preserve">You'll need a Dropbox API app. Here's how to create one:</text>
+<text x="16" y="172" fill="#56d4dd" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   1</text>
+<text x="52" y="172" fill="#e6edf3" font-size="15" textLength="630" lengthAdjust="spacingAndGlyphs" xml:space="preserve">. Open https://www.dropbox.com/developers/apps and click "Create app".</text>
+<text x="16" y="193" fill="#56d4dd" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   2</text>
+<text x="52" y="193" fill="#e6edf3" font-size="15" textLength="477" lengthAdjust="spacingAndGlyphs" xml:space="preserve">. Choose "Scoped access", then "Full Dropbox" access.</text>
+<text x="16" y="214" fill="#56d4dd" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   3</text>
+<text x="52" y="214" fill="#e6edf3" font-size="15" textLength="297" lengthAdjust="spacingAndGlyphs" xml:space="preserve">. Give it any name and create it.</text>
+<text x="16" y="235" fill="#56d4dd" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   4</text>
+<text x="52" y="235" fill="#e6edf3" font-size="15" textLength="549" lengthAdjust="spacingAndGlyphs" xml:space="preserve">. On the "Permissions" tab, enable these scopes, then Submit:</text>
+<text x="16" y="256" fill="#e6edf3" font-size="15" textLength="432" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         account_info.read, files.metadata.read,</text>
+<text x="16" y="277" fill="#e6edf3" font-size="15" textLength="432" lengthAdjust="spacingAndGlyphs" xml:space="preserve">         files.content.read, files.content.write</text>
+<text x="16" y="298" fill="#56d4dd" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   5</text>
+<text x="52" y="298" fill="#e6edf3" font-size="15" textLength="441" lengthAdjust="spacingAndGlyphs" xml:space="preserve">. On "Settings" → "OAuth 2 / Redirect URIs", add:</text>
+<text x="97" y="319" fill="#56d4dd" font-size="15" textLength="198" lengthAdjust="spacingAndGlyphs" xml:space="preserve">http://localhost:53682</text>
+<text x="16" y="340" fill="#56d4dd" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   6</text>
+<text x="52" y="340" fill="#e6edf3" font-size="15" textLength="414" lengthAdjust="spacingAndGlyphs" xml:space="preserve">. Copy the "App key" — that is your Client ID.</text>
+<text x="16" y="361" fill="#56d4dd" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   7</text>
+<text x="52" y="361" fill="#e6edf3" font-size="15" textLength="216" lengthAdjust="spacingAndGlyphs" xml:space="preserve">. Dropbox uses PKCE, so </text>
+<text x="268" y="361" fill="#e6edf3" font-size="15" font-weight="bold" textLength="144" lengthAdjust="spacingAndGlyphs" xml:space="preserve">NO client secret</text>
+<text x="412" y="361" fill="#e6edf3" font-size="15" textLength="99" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> is needed.</text>
+<text x="16" y="403" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="403" fill="#e6edf3" font-size="15" textLength="369" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Paste your Dropbox Client ID / App key: </text>
+<text x="394" y="403" fill="#e6edf3" font-size="15" textLength="135" lengthAdjust="spacingAndGlyphs" xml:space="preserve">a1b2c3d4e5f6g7h</text>
+</svg>

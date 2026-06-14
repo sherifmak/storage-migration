@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="815" height="484" viewBox="0 0 815 484" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="815" height="484" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="815" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="815" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="815" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="407.5" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry migrate</text>
+<rect x="0.5" y="0.5" width="814" height="483" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">$</text>
+<text x="34" y="46" fill="#e6edf3" font-size="15" font-weight="bold" textLength="162" lengthAdjust="spacingAndGlyphs" xml:space="preserve">cloudferry migrate</text>
+<text x="16" y="88" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="88" fill="#e6edf3" font-size="15" textLength="252" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Migrate FROM which account?</text>
+<text x="34" y="109" fill="#e6edf3" font-size="15" font-weight="bold" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">1</text>
+<text x="43" y="109" fill="#e6edf3" font-size="15" textLength="171" lengthAdjust="spacingAndGlyphs" xml:space="preserve">) jane@example.com </text>
+<text x="214" y="109" fill="#8b949e" font-size="15" textLength="171" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(dropbox:dbid:AAH…)</text>
+<text x="403" y="109" fill="#8b949e" font-size="15" textLength="81" lengthAdjust="spacingAndGlyphs" xml:space="preserve">— dropbox</text>
+<text x="34" y="130" fill="#e6edf3" font-size="15" font-weight="bold" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">2</text>
+<text x="43" y="130" fill="#e6edf3" font-size="15" textLength="153" lengthAdjust="spacingAndGlyphs" xml:space="preserve">) jane@gmail.com </text>
+<text x="196" y="130" fill="#8b949e" font-size="15" textLength="207" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(gdrive:jane@gmail.com)</text>
+<text x="421" y="130" fill="#8b949e" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">— gdrive</text>
+<text x="16" y="151" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="151" fill="#e6edf3" font-size="15" textLength="144" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Enter a number </text>
+<text x="169" y="151" fill="#e6edf3" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">1</text>
+<text x="16" y="193" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="193" fill="#e6edf3" font-size="15" textLength="234" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Migrate TO which account?</text>
+<text x="34" y="214" fill="#e6edf3" font-size="15" font-weight="bold" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">1</text>
+<text x="43" y="214" fill="#e6edf3" font-size="15" textLength="153" lengthAdjust="spacingAndGlyphs" xml:space="preserve">) jane@gmail.com </text>
+<text x="196" y="214" fill="#8b949e" font-size="15" textLength="207" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(gdrive:jane@gmail.com)</text>
+<text x="421" y="214" fill="#8b949e" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">— gdrive</text>
+<text x="16" y="235" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="235" fill="#e6edf3" font-size="15" textLength="144" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Enter a number </text>
+<text x="169" y="235" fill="#e6edf3" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">1</text>
+<text x="16" y="277" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="277" fill="#e6edf3" font-size="15" textLength="315" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Source folder on jane@example.com </text>
+<text x="340" y="277" fill="#8b949e" font-size="15" textLength="378" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(path like /Photos, blank = whole Dropbox)</text>
+<text x="718" y="277" fill="#e6edf3" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">: </text>
+<text x="736" y="277" fill="#e6edf3" font-size="15" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">/Photos</text>
+<text x="16" y="298" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="298" fill="#e6edf3" font-size="15" textLength="342" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Destination folder on jane@gmail.com </text>
+<text x="367" y="298" fill="#8b949e" font-size="15" textLength="306" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(folder ID, blank = My Drive root)</text>
+<text x="673" y="298" fill="#e6edf3" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">: </text>
+<text x="691" y="298" fill="#8b949e" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">root</text>
+<text x="16" y="319" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="319" fill="#e6edf3" font-size="15" textLength="180" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Parallel transfers </text>
+<text x="205" y="319" fill="#8b949e" font-size="15" textLength="27" lengthAdjust="spacingAndGlyphs" xml:space="preserve">[4]</text>
+<text x="241" y="319" fill="#e6edf3" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">6</text>
+<text x="16" y="361" fill="#e6edf3" font-size="15" font-weight="bold" textLength="153" lengthAdjust="spacingAndGlyphs" xml:space="preserve">About to migrate:</text>
+<text x="16" y="382" fill="#e6edf3" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  From  </text>
+<text x="88" y="382" fill="#56d4dd" font-size="15" textLength="144" lengthAdjust="spacingAndGlyphs" xml:space="preserve">jane@example.com</text>
+<text x="250" y="382" fill="#8b949e" font-size="15" textLength="81" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(/Photos)</text>
+<text x="16" y="403" fill="#e6edf3" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  To    </text>
+<text x="88" y="403" fill="#56d4dd" font-size="15" textLength="126" lengthAdjust="spacingAndGlyphs" xml:space="preserve">jane@gmail.com</text>
+<text x="232" y="403" fill="#8b949e" font-size="15" textLength="126" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(account root)</text>
+<text x="16" y="424" fill="#e6edf3" font-size="15" textLength="207" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Parallel transfers: 6</text>
+<text x="16" y="445" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">?</text>
+<text x="25" y="445" fill="#e6edf3" font-size="15" textLength="198" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Start the migration? </text>
+<text x="223" y="445" fill="#8b949e" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">(Y/n)</text>
+<text x="277" y="445" fill="#e6edf3" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">y</text>
+</svg>

@@ -16,6 +16,7 @@ const OPTIONS = {
   'src-root': { type: 'string' },
   'dest-root': { type: 'string' },
   concurrency: { type: 'string', short: 'c' },
+  overwrite: { type: 'boolean' },
   port: { type: 'string' },
   yes: { type: 'boolean', short: 'y' },
   'retry-failed': { type: 'boolean' },
@@ -45,6 +46,7 @@ async function main(argv) {
     srcRoot: values['src-root'],
     destRoot: values['dest-root'],
     concurrency: values.concurrency,
+    overwrite: values.overwrite,
     port: values.port ? Number(values.port) : undefined,
     yes: values.yes,
     retryFailed: values['retry-failed'],
@@ -103,6 +105,8 @@ ${b('MIGRATE OPTIONS')}
   --src-root <path|id>      Source folder (default: whole account)
   --dest-root <path|id>     Destination folder (default: account root)
   -c, --concurrency <n>     Parallel transfers (default: 4)
+  --overwrite               Re-transfer files even if already at the destination
+                            (default: skip files that already exist with same size)
   -y, --yes                 Skip confirmation prompts
 
 ${b('RESUME OPTIONS')}

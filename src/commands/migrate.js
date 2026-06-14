@@ -23,7 +23,7 @@ async function runJob(store) {
 
   const source = accounts.buildProvider(srcAcc, { logger });
   const dest = accounts.buildProvider(dstAcc, { logger });
-  const engine = new Engine({ store, source, dest, logger, concurrency: store.job.concurrency || 4 });
+  const engine = new Engine({ store, source, dest, logger, concurrency: store.job.concurrency || 4, skipExisting: store.job.skipExisting !== false });
   const monitor = new Monitor(engine, { from: srcAcc.label || srcAcc.provider, to: dstAcc.label || dstAcc.provider });
 
   logger.info('job started', { id: store.job.id, from: store.job.from, to: store.job.to });
@@ -133,6 +133,7 @@ async function migrateCommand(opts) {
   console.log(`  From  ${c.cyan(srcAcc.label)}  ${c.dim('(' + (srcRoot || 'entire account') + ')')}`);
   console.log(`  To    ${c.cyan(dstAcc.label)}  ${c.dim('(' + (destRoot || 'account root') + ')')}`);
   console.log(`  Parallel transfers: ${concurrency}`);
+  console.log(`  Existing files: ${opts.overwrite ? c.yellow('re-transfer (overwrite)') : c.green('skip if same size')}`);
   console.log('');
   if (!opts.yes && !(await prompts.confirm('Start the migration?', true))) {
     console.log('Cancelled.');
@@ -144,6 +145,7 @@ async function migrateCommand(opts) {
     from: srcAcc.key, to: dstAcc.key,
     srcRoot: srcRoot || '', destRoot: destRoot || '',
     concurrency,
+    skipExisting: !opts.overwrite,
     fromLabel: srcAcc.label, toLabel: dstAcc.label,
   });
   console.log(c.dim(`Job ${jobId} created at ${config.jobDir(jobId)}`));

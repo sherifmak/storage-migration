@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="421" viewBox="0 0 671 421" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="671" height="421" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="671" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="671" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="671" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="335.5" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry status</text>
+<rect x="0.5" y="0.5" width="670" height="420" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">$</text>
+<text x="34" y="46" fill="#e6edf3" font-size="15" font-weight="bold" textLength="153" lengthAdjust="spacingAndGlyphs" xml:space="preserve">cloudferry status</text>
+<text x="16" y="67" fill="#e6edf3" font-size="15" font-weight="bold" textLength="333" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Job dropbox-to-gdrive-20260613-162600</text>
+<text x="16" y="88" fill="#8b949e" font-size="15" textLength="450" lengthAdjust="spacingAndGlyphs" xml:space="preserve">──────────────────────────────────────────────────</text>
+<text x="16" y="109" fill="#e6edf3" font-size="15" textLength="423" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Route       jane@example.com → jane@gmail.com</text>
+<text x="16" y="130" fill="#e6edf3" font-size="15" textLength="189" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Source root /Photos</text>
+<text x="16" y="151" fill="#e6edf3" font-size="15" textLength="162" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Dest root   root</text>
+<text x="16" y="172" fill="#e6edf3" font-size="15" textLength="126" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Discovery   </text>
+<text x="142" y="172" fill="#3fb950" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">complete</text>
+<text x="16" y="214" fill="#e6edf3" font-size="15" textLength="234" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Files       23,910 total</text>
+<text x="52" y="235" fill="#3fb950" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">done</text>
+<text x="88" y="235" fill="#e6edf3" font-size="15" textLength="216" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      23,908  (271.0 GB)</text>
+<text x="16" y="256" fill="#e6edf3" font-size="15" textLength="135" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    pending   0</text>
+<text x="52" y="277" fill="#f85149" font-size="15" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">failed</text>
+<text x="106" y="277" fill="#e6edf3" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">    2</text>
+<text x="16" y="298" fill="#e6edf3" font-size="15" textLength="297" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Data        271.0 GB / 271.0 GB</text>
+<text x="16" y="340" fill="#e6edf3" font-size="15" font-weight="bold" textLength="99" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Failures:</text>
+<text x="52" y="361" fill="#f85149" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✗</text>
+<text x="61" y="361" fill="#e6edf3" font-size="15" textLength="171" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Photos/locked.key </text>
+<text x="232" y="361" fill="#8b949e" font-size="15" textLength="423" lengthAdjust="spacingAndGlyphs" xml:space="preserve">— HTTP 403 for .../download: insufficient_scope</text>
+<text x="52" y="382" fill="#f85149" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✗</text>
+<text x="61" y="382" fill="#e6edf3" font-size="15" textLength="180" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Photos/corrupt.raw </text>
+<text x="241" y="382" fill="#8b949e" font-size="15" textLength="270" lengthAdjust="spacingAndGlyphs" xml:space="preserve">— size mismatch after download</text>
+</svg>

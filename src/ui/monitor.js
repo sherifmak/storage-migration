@@ -113,6 +113,7 @@ class Monitor {
 
   _recent(r, inner) {
     if (r.kind === 'ok') return `${c.green('✓')} ${fit(r.name, inner - 2, false)}`;
+    if (r.kind === 'skip') return `${c.dim('↷')} ${c.dim(fit(r.name + ' (already there)', inner - 2))}`;
     if (r.kind === 'retry') return `${c.yellow('⟳')} ${fit(r.name + (r.detail ? ` (${r.detail})` : ''), inner - 2)}`;
     return `${c.red('✗')} ${fit(r.name + (r.detail ? ` (${r.detail})` : ''), inner - 2)}`;
   }

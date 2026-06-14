@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="644" height="421" viewBox="0 0 644 421" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="644" height="421" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="644" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="644" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="644" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="322" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry migrate — transferring</text>
+<rect x="0.5" y="0.5" width="643" height="420" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╔══════════════════════════════════════════════════════════════════╗</text>
+<text x="16" y="67" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="67" fill="#56d4dd" font-size="15" font-weight="bold" textLength="90" lengthAdjust="spacingAndGlyphs" xml:space="preserve">CloudFerry</text>
+<text x="124" y="67" fill="#8b949e" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  ·  </text>
+<text x="169" y="67" fill="#e6edf3" font-size="15" font-weight="bold" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Dropbox</text>
+<text x="232" y="67" fill="#56d4dd" font-size="15" textLength="27" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> → </text>
+<text x="259" y="67" fill="#e6edf3" font-size="15" font-weight="bold" textLength="108" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Google Drive</text>
+<text x="610" y="67" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="88" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╟──────────────────────────────────────────────────────────────────╢</text>
+<text x="16" y="109" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="109" fill="#e6edf3" font-size="15" font-weight="bold" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Overall</text>
+<text x="115" y="109" fill="#3fb950" font-size="15" textLength="189" lengthAdjust="spacingAndGlyphs" xml:space="preserve">█████████████████████</text>
+<text x="304" y="109" fill="#8b949e" font-size="15" textLength="171" lengthAdjust="spacingAndGlyphs" xml:space="preserve">░░░░░░░░░░░░░░░░░░░</text>
+<text x="493" y="109" fill="#e6edf3" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> 52%</text>
+<text x="610" y="109" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="130" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="130" fill="#8b949e" font-size="15" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Files </text>
+<text x="88" y="130" fill="#e6edf3" font-size="15" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">12,403</text>
+<text x="142" y="130" fill="#8b949e" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">/</text>
+<text x="151" y="130" fill="#e6edf3" font-size="15" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">23,910</text>
+<text x="259" y="130" fill="#8b949e" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Data </text>
+<text x="304" y="130" fill="#e6edf3" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">142.3 GB</text>
+<text x="376" y="130" fill="#8b949e" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">/</text>
+<text x="385" y="130" fill="#e6edf3" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">271.0 GB</text>
+<text x="610" y="130" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="151" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="151" fill="#8b949e" font-size="15" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Speed </text>
+<text x="88" y="151" fill="#3fb950" font-size="15" textLength="81" lengthAdjust="spacingAndGlyphs" xml:space="preserve">48.2 MB/s</text>
+<text x="169" y="151" fill="#8b949e" font-size="15" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   ·   </text>
+<text x="232" y="151" fill="#8b949e" font-size="15" textLength="36" lengthAdjust="spacingAndGlyphs" xml:space="preserve">ETA </text>
+<text x="268" y="151" fill="#e6edf3" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">00:41:12</text>
+<text x="340" y="151" fill="#8b949e" font-size="15" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   ·   </text>
+<text x="403" y="151" fill="#8b949e" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Elapsed </text>
+<text x="475" y="151" fill="#e6edf3" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">02:13:55</text>
+<text x="610" y="151" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="172" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="172" fill="#8b949e" font-size="15" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Active </text>
+<text x="97" y="172" fill="#e6edf3" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">4</text>
+<text x="106" y="172" fill="#8b949e" font-size="15" textLength="90" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   Failed </text>
+<text x="196" y="172" fill="#e6edf3" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">0</text>
+<text x="205" y="172" fill="#8b949e" font-size="15" textLength="99" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   Skipped </text>
+<text x="304" y="172" fill="#e6edf3" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">0</text>
+<text x="313" y="172" fill="#8b949e" font-size="15" textLength="99" lengthAdjust="spacingAndGlyphs" xml:space="preserve">   Pending </text>
+<text x="412" y="172" fill="#e6edf3" font-size="15" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">11,503</text>
+<text x="610" y="172" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="193" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╟─ Workers ────────────────────────────────────────────────────────╢</text>
+<text x="16" y="214" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="214" fill="#e6edf3" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">1 </text>
+<text x="52" y="214" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">⬆</text>
+<text x="61" y="214" fill="#e6edf3" font-size="15" textLength="270" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> photos/2021/IMG_3920.mov     </text>
+<text x="331" y="214" fill="#3fb950" font-size="15" textLength="72" lengthAdjust="spacingAndGlyphs" xml:space="preserve">████████</text>
+<text x="403" y="214" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">░░</text>
+<text x="421" y="214" fill="#e6edf3" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  81%</text>
+<text x="610" y="214" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="235" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="235" fill="#e6edf3" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">2 </text>
+<text x="52" y="235" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">⬇</text>
+<text x="61" y="235" fill="#e6edf3" font-size="15" textLength="270" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> docs/Q3 Report.pdf           </text>
+<text x="331" y="235" fill="#3fb950" font-size="15" textLength="27" lengthAdjust="spacingAndGlyphs" xml:space="preserve">███</text>
+<text x="358" y="235" fill="#8b949e" font-size="15" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">░░░░░░░</text>
+<text x="421" y="235" fill="#e6edf3" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  31%</text>
+<text x="610" y="235" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="256" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="256" fill="#e6edf3" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">3 </text>
+<text x="52" y="256" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">⬇</text>
+<text x="61" y="256" fill="#e6edf3" font-size="15" textLength="270" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> music/live/encore.flac       </text>
+<text x="331" y="256" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">█</text>
+<text x="340" y="256" fill="#8b949e" font-size="15" textLength="81" lengthAdjust="spacingAndGlyphs" xml:space="preserve">░░░░░░░░░</text>
+<text x="421" y="256" fill="#e6edf3" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  12%</text>
+<text x="610" y="256" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="277" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="277" fill="#e6edf3" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">4 </text>
+<text x="52" y="277" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">⬆</text>
+<text x="61" y="277" fill="#e6edf3" font-size="15" textLength="270" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> archive/2019-backup.zip      </text>
+<text x="331" y="277" fill="#3fb950" font-size="15" textLength="90" lengthAdjust="spacingAndGlyphs" xml:space="preserve">██████████</text>
+<text x="421" y="277" fill="#8b949e" font-size="15" textLength="0" lengthAdjust="spacingAndGlyphs" xml:space="preserve"></text>
+<text x="421" y="277" fill="#e6edf3" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  99%</text>
+<text x="610" y="277" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="298" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╟─ Recent ─────────────────────────────────────────────────────────╢</text>
+<text x="16" y="319" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="319" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✓</text>
+<text x="43" y="319" fill="#e6edf3" font-size="15" textLength="171" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> music/track01.flac</text>
+<text x="610" y="319" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="340" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="340" fill="#3fb950" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">✓</text>
+<text x="43" y="340" fill="#e6edf3" font-size="15" textLength="207" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> docs/notes/meeting.txt</text>
+<text x="610" y="340" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="361" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╚══════════════════════════════════════════════════════════════════╝</text>
+<text x="16" y="382" fill="#8b949e" font-size="15" textLength="603" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Press Ctrl-C to pause safely — progress is saved, resume anytime.</text>
+</svg>

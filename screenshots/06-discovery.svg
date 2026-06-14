@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="644" height="274" viewBox="0 0 644 274" font-family="'DejaVu Sans Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace">
+<rect x="0" y="0" width="644" height="274" rx="10" fill="#0d1117"/>
+<rect x="0" y="0" width="644" height="34" rx="10" fill="#161b22"/>
+<rect x="0" y="22" width="644" height="12" fill="#161b22"/>
+<line x1="0" y1="34" x2="644" y2="34" stroke="#30363d" stroke-width="1"/>
+<circle cx="18" cy="17" r="6" fill="#f85149"/><circle cx="38" cy="17" r="6" fill="#d29922"/><circle cx="58" cy="17" r="6" fill="#3fb950"/>
+<text x="322" y="22" fill="#8b949e" font-size="13" text-anchor="middle">cloudferry migrate — scanning</text>
+<rect x="0.5" y="0.5" width="643" height="273" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+<text x="16" y="46" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╔══════════════════════════════════════════════════════════════════╗</text>
+<text x="16" y="67" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="67" fill="#56d4dd" font-size="15" font-weight="bold" textLength="90" lengthAdjust="spacingAndGlyphs" xml:space="preserve">CloudFerry</text>
+<text x="124" y="67" fill="#8b949e" font-size="15" textLength="45" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  ·  </text>
+<text x="169" y="67" fill="#e6edf3" font-size="15" font-weight="bold" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Dropbox</text>
+<text x="232" y="67" fill="#56d4dd" font-size="15" textLength="27" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> → </text>
+<text x="259" y="67" fill="#e6edf3" font-size="15" font-weight="bold" textLength="108" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Google Drive</text>
+<text x="610" y="67" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="88" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╟──────────────────────────────────────────────────────────────────╢</text>
+<text x="16" y="109" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="109" fill="#56d4dd" font-size="15" textLength="9" lengthAdjust="spacingAndGlyphs" xml:space="preserve">⠹</text>
+<text x="43" y="109" fill="#e6edf3" font-size="15" textLength="162" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> Scanning source… </text>
+<text x="205" y="109" fill="#e6edf3" font-size="15" font-weight="bold" textLength="54" lengthAdjust="spacingAndGlyphs" xml:space="preserve">18,204</text>
+<text x="259" y="109" fill="#e6edf3" font-size="15" textLength="108" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> items found</text>
+<text x="610" y="109" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="130" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="130" fill="#8b949e" font-size="15" textLength="468" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Building the migration manifest before transferring.</text>
+<text x="610" y="130" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="151" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╟─ Workers ────────────────────────────────────────────────────────╢</text>
+<text x="16" y="172" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="172" fill="#8b949e" font-size="15" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">1  idle</text>
+<text x="610" y="172" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="193" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve">║ </text>
+<text x="34" y="193" fill="#8b949e" font-size="15" textLength="63" lengthAdjust="spacingAndGlyphs" xml:space="preserve">2  idle</text>
+<text x="610" y="193" fill="#8b949e" font-size="15" textLength="18" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ║</text>
+<text x="16" y="214" fill="#8b949e" font-size="15" textLength="612" lengthAdjust="spacingAndGlyphs" xml:space="preserve">╚══════════════════════════════════════════════════════════════════╝</text>
+<text x="16" y="235" fill="#8b949e" font-size="15" textLength="603" lengthAdjust="spacingAndGlyphs" xml:space="preserve">  Press Ctrl-C to pause safely — progress is saved, resume anytime.</text>
+</svg>
