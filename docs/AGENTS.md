@@ -11,19 +11,17 @@ There are two ways to wire it up. Most people want **option A (MCP)**.
 
 ## A. MCP server (recommended)
 
-### One command — no clone, no install
+CloudFerry is a standard MCP **stdio** server with zero dependencies, and it
+runs straight from GitHub via `npx` — no clone, no install. Every MCP client
+needs the same two things:
 
-CloudFerry has zero dependencies and runs straight from GitHub via `npx`, so a
-single command registers it with your agent.
+- **command:** `npx`
+- **args:** `-y github:sherifmak/storage-migration mcp`
 
-**Claude Code**
+### The config most clients use
 
-```bash
-claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp
-```
-
-**Cursor / Windsurf / Zed / Claude Desktop** — add to the app's MCP config
-(`~/.cursor/mcp.json`, `mcpServers` in settings, `claude_desktop_config.json`, …):
+Cursor, Windsurf, Claude Desktop/Code, Cline, Gemini CLI and most others use the
+`mcpServers` shape:
 
 ```json
 {
@@ -36,6 +34,36 @@ claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp
 }
 ```
 
+VS Code uses a top-level `servers` object with an explicit `type`:
+
+```json
+{
+  "servers": {
+    "cloudferry": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "github:sherifmak/storage-migration", "mcp"]
+    }
+  }
+}
+```
+
+### Where that config goes (by client)
+
+| Client | Location / command |
+| --- | --- |
+| Claude Code | `claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp` |
+| Claude Desktop | `claude_desktop_config.json` |
+| Cline (VS Code ext.) | the extension's `cline_mcp_settings.json` |
+| Cursor | `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global) |
+| Gemini CLI | `~/.gemini/settings.json` (`mcpServers`) |
+| VS Code (Copilot agent) | `.vscode/mcp.json` — use the `servers` shape above |
+| Windsurf | `~/.codeium/windsurf/mcp_config.json` |
+| Any other MCP client | command `npx`, args `-y github:sherifmak/storage-migration mcp` |
+
+When in doubt, consult your agent's own "MCP servers" docs — the values are
+always the `command`/`args` above.
+
 <details>
 <summary>Alternative: install locally (offline / development)</summary>
 
@@ -43,7 +71,7 @@ claude mcp add cloudferry -- npx -y github:sherifmak/storage-migration mcp
 git clone https://github.com/sherifmak/storage-migration cloudferry && cd cloudferry
 npm install        # zero dependencies
 npm link           # puts `cloudferry` on your PATH
-claude mcp add cloudferry -- cloudferry mcp
+# then point your agent at:  command "cloudferry", args ["mcp"]
 ```
 
 </details>
