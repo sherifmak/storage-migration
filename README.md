@@ -91,6 +91,32 @@ cloudferry resume
 | `cloudferry resume [jobId]` | Resume a paused/interrupted migration (newest job if omitted) |
 | `cloudferry jobs` | List all migration jobs |
 | `cloudferry status [jobId]` | Detailed counts and failures for a job |
+| `cloudferry stop [jobId]` | Pause a background migration safely |
+| `cloudferry mcp` | Run the MCP server so a coding agent can drive migrations |
+
+## Let your coding agent do it
+
+CloudFerry includes an **MCP server**, so an AI coding agent (Claude Code,
+Cursor, Windsurf, …) can run the whole migration for you. Connect your accounts
+once, then just ask: *"migrate my Dropbox /Photos to Google Drive and tell me
+when it's done."*
+
+Register it once:
+
+```bash
+# Claude Code
+claude mcp add cloudferry -- cloudferry mcp
+```
+
+```json
+// Cursor / Windsurf / Claude Desktop  (mcpServers config)
+{ "mcpServers": { "cloudferry": { "command": "cloudferry", "args": ["mcp"] } } }
+```
+
+The agent gets tools to connect accounts, start a migration in the background,
+poll its progress, and pause/resume it. Migrations run detached, so they survive
+the agent session ending. Full guide (including a plain‑CLI/JSON path with
+`--detach` and `--json`): **[docs/AGENTS.md](docs/AGENTS.md)**.
 
 ### Non‑interactive migration
 

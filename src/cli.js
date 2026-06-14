@@ -17,6 +17,8 @@ const OPTIONS = {
   'dest-root': { type: 'string' },
   concurrency: { type: 'string', short: 'c' },
   overwrite: { type: 'boolean' },
+  detach: { type: 'boolean' },
+  json: { type: 'boolean' },
   port: { type: 'string' },
   yes: { type: 'boolean', short: 'y' },
   'retry-failed': { type: 'boolean' },
@@ -47,6 +49,8 @@ async function main(argv) {
     destRoot: values['dest-root'],
     concurrency: values.concurrency,
     overwrite: values.overwrite,
+    detach: values.detach,
+    json: values.json,
     port: values.port ? Number(values.port) : undefined,
     yes: values.yes,
     retryFailed: values['retry-failed'],
@@ -57,8 +61,17 @@ async function main(argv) {
     case 'accounts': return accountsCommand(rest[0], rest[1]);
     case 'migrate': case 'start': return migrateCommand(opts);
     case 'resume': return resumeCommand(rest[0], opts);
-    case 'jobs': case 'list': return jobsCommand();
-    case 'status': return statusCommand(rest[0]);
+    case 'run': { const { runCommand } = require('./commands/ops'); return runCommand(rest[0]); }
+    case 'stop': case 'pause': { const { stopCommand } = require('./commands/ops'); return stopCommand(rest[0], opts); }
+    case 'jobs': case 'list': {
+      if (opts.json) { const { jobsJson } = require('./commands/ops'); return jobsJson(); }
+      return jobsCommand();
+    }
+    case 'status': {
+      if (opts.json) { const { statusJson } = require('./commands/ops'); return statusJson(rest[0]); }
+      return statusCommand(rest[0]);
+    }
+    case 'mcp': { const { startMcpServer } = require('./mcp/server'); return startMcpServer(); }
     case 'guide': case 'setup': return guideCommand(rest[0], opts);
     case 'providers': {
       const { listProviders } = require('./providers');
@@ -96,8 +109,16 @@ ${b('COMMANDS')}
   providers                 List supported providers
   migrate                   Create and run a migration
   resume [jobId]            Resume a paused/interrupted migration
+  run <jobId>               Run a job headless (no dashboard); used with --detach
+  stop [jobId]              Pause a background migration safely
   jobs                      List all migration jobs
   status [jobId]            Show detailed status for a job
+
+${b('FOR CODING AGENTS')}
+  mcp                       Run the MCP server (stdio) so an AI agent can drive
+                            migrations as tools. See docs/AGENTS.md.
+  Most commands accept --json for machine-readable output, and
+  migrate/resume accept --detach to start in the background and return a jobId.
 
 ${b('MIGRATE OPTIONS')}
   --from <key>              Source account key (see: cloudferry accounts)
@@ -107,10 +128,13 @@ ${b('MIGRATE OPTIONS')}
   -c, --concurrency <n>     Parallel transfers (default: 4)
   --overwrite               Re-transfer files even if already at the destination
                             (default: skip files that already exist with same size)
+  --detach                  Start in the background; print the jobId and exit
+  --json                    Machine-readable output
   -y, --yes                 Skip confirmation prompts
 
 ${b('RESUME OPTIONS')}
   --retry-failed            Re-queue files that previously failed
+  --detach                  Resume in the background
 
 ${b('OTHER')}
   --port <n>                Local OAuth redirect port (default: 53682)

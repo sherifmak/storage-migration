@@ -32,6 +32,7 @@ class Store {
     this.jobPath = path.join(this.dir, 'job.json');
     this.stagingDir = path.join(this.dir, 'staging');
 
+    this.readOnly = false;
     this.job = null;            // job definition + counters
     this.items = new Map();     // seq -> item record
     this._manifestStream = null;
@@ -79,14 +80,20 @@ class Store {
     return store;
   }
 
-  static open(jobId) {
+  // Open a job. Pass { readOnly: true } for status/inspection: no append streams
+  // are opened and close() never rewrites anything, so concurrent readers are
+  // safe and don't race writers.
+  static open(jobId, { readOnly = false } = {}) {
     if (!Store.exists(jobId)) throw new Error(`No such job: ${jobId}`);
     const store = new Store(jobId);
+    store.readOnly = readOnly;
     store.job = JSON.parse(fs.readFileSync(store.jobPath, 'utf8'));
     store._loadManifest();
     store._loadJournal();
-    fs.mkdirSync(store.stagingDir, { recursive: true });
-    store._openStreams();
+    if (!readOnly) {
+      fs.mkdirSync(store.stagingDir, { recursive: true });
+      store._openStreams();
+    }
     return store;
   }
 
@@ -274,6 +281,7 @@ class Store {
   }
 
   async close() {
+    if (this.readOnly) return; // nothing was opened; never rewrite
     this._saveJob();
     await Promise.all([
       this._manifestStream && endStream(this._manifestStream),
