@@ -3,10 +3,10 @@
 const path = require('node:path');
 const config = require('../config');
 const { Store } = require('../store');
-const { Engine } = require('../engine');
 const { Monitor } = require('../ui/monitor');
 const { Logger } = require('../util/logger');
 const accounts = require('../auth/accounts');
+const core = require('../core');
 const prompts = require('../util/prompts');
 const { c } = require('../util/ansi');
 const { formatBytes, formatNumber, formatDuration } = require('../util/format');
@@ -15,16 +15,8 @@ const { formatBytes, formatNumber, formatDuration } = require('../util/format');
 // dashboard, and print a summary. Shared by both `migrate` and `resume`.
 async function runJob(store) {
   const logger = new Logger(path.join(store.dir, 'migration.log'));
-  const cfg = accounts.load();
-  const srcAcc = accounts.findAccount(cfg, store.job.from);
-  const dstAcc = accounts.findAccount(cfg, store.job.to);
-  if (!srcAcc) throw new Error(`Source account "${store.job.from}" is no longer connected. Run: cloudferry connect`);
-  if (!dstAcc) throw new Error(`Destination account "${store.job.to}" is no longer connected. Run: cloudferry connect`);
-
-  const source = accounts.buildProvider(srcAcc, { logger });
-  const dest = accounts.buildProvider(dstAcc, { logger });
-  const engine = new Engine({ store, source, dest, logger, concurrency: store.job.concurrency || 4, skipExisting: store.job.skipExisting !== false });
-  const monitor = new Monitor(engine, { from: srcAcc.label || srcAcc.provider, to: dstAcc.label || dstAcc.provider });
+  const { engine, fromLabel, toLabel } = core.buildEngine(store, logger);
+  const monitor = new Monitor(engine, { from: fromLabel, to: toLabel });
 
   logger.info('job started', { id: store.job.id, from: store.job.from, to: store.job.to });
 
@@ -140,14 +132,23 @@ async function migrateCommand(opts) {
     return;
   }
 
-  const jobId = makeJobId(srcAcc.provider, dstAcc.provider);
-  const store = Store.create(jobId, {
+  const { jobId } = await core.createJob({
     from: srcAcc.key, to: dstAcc.key,
-    srcRoot: srcRoot || '', destRoot: destRoot || '',
-    concurrency,
-    skipExisting: !opts.overwrite,
-    fromLabel: srcAcc.label, toLabel: dstAcc.label,
+    srcRoot, destRoot, concurrency, overwrite: opts.overwrite,
   });
+
+  // Detached mode: start a background runner and return immediately (used by
+  // agents / scripts that will poll `status`).
+  if (opts.detach) {
+    const { pid } = core.spawnDetachedRun(jobId);
+    if (opts.json) { console.log(JSON.stringify({ jobId, pid, detached: true }, null, 2)); return; }
+    console.log(c.green(`Started migration in the background.`));
+    console.log(`  Job: ${c.bold(jobId)}  (pid ${pid})`);
+    console.log(`  Watch it:  ${c.cyan(`cloudferry status ${jobId}`)}`);
+    return;
+  }
+
+  const store = Store.open(jobId);
   console.log(c.dim(`Job ${jobId} created at ${config.jobDir(jobId)}`));
   await runJob(store);
 }
@@ -173,6 +174,17 @@ async function resumeCommand(jobId, opts) {
       if (cnt.failed) console.log(`  (${cnt.failed} failed — retry with ${c.cyan(`cloudferry resume ${jobId} --retry-failed`)})`);
     }
     await store.close();
+    return;
+  }
+
+  // Detached resume for agents/scripts.
+  if (opts.detach) {
+    await store.close();
+    const { pid } = core.spawnDetachedRun(jobId);
+    if (opts.json) { console.log(JSON.stringify({ jobId, pid, detached: true }, null, 2)); return; }
+    console.log(c.green(`Resuming migration in the background.`));
+    console.log(`  Job: ${c.bold(jobId)}  (pid ${pid})`);
+    console.log(`  Watch it:  ${c.cyan(`cloudferry status ${jobId}`)}`);
     return;
   }
   await runJob(store);

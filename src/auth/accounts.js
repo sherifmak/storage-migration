@@ -131,6 +131,45 @@ async function connectInteractive(providerId, { port = oauth.DEFAULT_PORT, logge
   return { key, ...account };
 }
 
+// Non-interactive connect, given credentials directly. Used by the MCP server.
+// Still opens the browser for the OAuth consent step (and reports the URL via
+// onUrl), since that step is inherently user-driven.
+async function connectWithCredentials(providerId, { clientId, clientSecret, port = oauth.DEFAULT_PORT, logger, onUrl } = {}) {
+  const Cls = getProviderClass(providerId);
+  const guide = setupGuide(providerId, port);
+  if (!clientId) throw new Error(`A Client ID is required to connect ${guide.name}.`);
+  if (guide.needsSecret && !clientSecret) throw new Error(`${guide.name} requires a Client Secret.`);
+
+  const cfg = load();
+  const app = { clientId };
+  if (clientSecret) app.clientSecret = clientSecret;
+  cfg.apps[providerId] = app;
+  config.saveConfig(cfg);
+
+  const authBuilder = Cls.buildAuthorize(app.clientId);
+  const { code, redirectUri } = await oauth.authorizeViaLoopback({
+    port,
+    buildAuthorizeUrl: authBuilder.build,
+    onUrl: onUrl || ((url) => process.stderr.write(`Authorize in your browser:\n${url}\n`)),
+  });
+  const tokens = await Cls.exchangeCode({
+    clientId: app.clientId, clientSecret: app.clientSecret, code,
+    codeVerifier: authBuilder.pkce && authBuilder.pkce.verifier, redirectUri,
+  });
+
+  const account = { provider: providerId, label: guide.name, app, tokens, accountId: tokens.accountId || null };
+  const provider = new Cls(account, { logger });
+  const info = await provider.getAccountInfo();
+  account.accountId = info.accountId || account.accountId;
+  account.label = info.label || account.label;
+  account.tokens = provider.tokens;
+
+  const key = makeKey(cfg, providerId, account.accountId);
+  cfg.accounts[key] = account;
+  config.saveConfig(cfg);
+  return { key, provider: providerId, label: account.label, accountId: account.accountId };
+}
+
 function makeKey(cfg, providerId, accountId) {
   const base = accountId ? `${providerId}:${accountId}` : providerId;
   if (!cfg.accounts[base]) return base;
@@ -152,4 +191,4 @@ function mask(s) {
   return s.length <= 6 ? '••••' : `${s.slice(0, 3)}…${s.slice(-3)}`;
 }
 
-module.exports = { load, listAccounts, findAccount, buildProvider, connectInteractive, removeAccount };
+module.exports = { load, listAccounts, findAccount, buildProvider, connectInteractive, connectWithCredentials, removeAccount };
